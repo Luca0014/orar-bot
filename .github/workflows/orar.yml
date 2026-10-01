@@ -1,0 +1,40 @@
+name: Verifica orar
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+    inputs:
+      test:
+        description: Trimite un mesaj de test cu orarul curent
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: orar
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verifica pagina
+        run: node check.mjs ${{ inputs.test && '--test' || '' }}
+        env:
+          WHATSAPP_TOKEN: ${{ secrets.WHATSAPP_TOKEN }}
+          WHATSAPP_PHONE_ID: ${{ secrets.WHATSAPP_PHONE_ID }}
+          WHATSAPP_TO: ${{ secrets.WHATSAPP_TO }}
+
+      - name: Salveaza starea
+        run: |
+          git add state.json
+          git diff --cached --quiet && exit 0
+          git config user.name "orar-bot"
+          git config user.email "orar-bot@users.noreply.github.com"
+          git commit -m "Actualizeaza starea orarului"
+          git push
