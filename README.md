@@ -32,7 +32,7 @@ Un număr business poate scrie primul doar cu un șablon aprobat. Creează-l în
 | Body | textul de mai jos |
 
 ```
-Notificare orar: {{1}} (RI anul I).
+Notificare orar: {{1}} (Robotica anul I).
 
 Fișier: {{2}}
 Link: {{3}}
