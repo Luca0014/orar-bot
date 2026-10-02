@@ -1,6 +1,6 @@
 # Orar-bot
 
-Verifică la ~5 minute pagina <https://iirmp.utcluj.ro/orar.html> (Licență, Cluj-Napoca, **Anul I: RI**)
+Verifică la ~15 minute pagina <https://iirmp.utcluj.ro/orar.html> (Licență, Cluj-Napoca, **Anul I: RI**)
 și, când apare un orar nou sau PDF-ul e înlocuit, îți trimite PDF-ul pe WhatsApp.
 
 - `check.mjs` – găsește link-ul, îl compară cu `state.json`, descarcă PDF-ul
