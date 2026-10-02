@@ -43,6 +43,9 @@ PDF-ul este atașat acestui mesaj.
 Exemple pentru variabile: `S-a publicat un orar nou`, `orar_v3.pdf`, `https://iirmp.utcluj.ro/orar.html`.
 Trimite la aprobare; de obicei durează câteva minute.
 
+Dacă aprobarea întârzie, poți crea și șablonul de rezervă `orar_actualizat` (aceleași setări, corp fără
+rândul `Link: {{3}}`); botul folosește primul șablon aprobat dintre cele două.
+
 ### 3. Token permanent
 
 Token-ul din pagina API Setup expiră în 24h. Pentru unul permanent:
